@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+      /* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e9ecef;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #343a40;
+  font-weight: 700;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.chat {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat p {
+  margin: 5px 0;
+  color: #495057;
+  font-weight: 500;
+}
+
+.msg {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-left: 4px solid #007bff;
+}
+
+.msg p {
+  margin: 0;
+  color: #343a40;
+}
+
+.form {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+button.delete-btn {
+  background-color: #dc3545;
+}
+
+button.delete-btn:hover {
+  background-color: #c82333;
+}
+
+small {
+  color: #868e96;
+  display: block;
+  text-align: right;
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #dee2e6;
+  margin-top: 20px;
+}
+
+i {
+  color: #007bff;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Popup Styles */
+.popup {
+  visibility: hidden;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000;
+  transition: visibility 0s, opacity 0.5s linear;
+  opacity: 0;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+    </style>
+        /* Add some basic styling to make the page look nice */
+    </head>
+<body>
+
+    <h1>Edit your Chat : <%= chat.id %></h1>
+    <p>This chat was sent From <%= chat.from %> to <%= chat.to %></p>
+
+    <form method="POST" action="/chats/<%= chat.id %>?_method=PUT" >
+        <textarea name="msg" rows="10" cols="50"><%= chat.msg %></textarea>
+        <br><br>
+        <button>Edit</button>
+    </form>
+    
+</body>
+</html>

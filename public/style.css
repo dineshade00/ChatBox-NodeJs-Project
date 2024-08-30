@@ -1,0 +1,126 @@
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* style.css */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  .chat {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .chat p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .msg {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .msg p {
+    margin: 0;
+    color: #333;
+  }
+  
+  .form {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button.delete-btn {
+    background-color: #f44336;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button.delete-btn:hover {
+    background-color: #e53935;
+  }
+  
+  small {
+    color: #888;
+    display: block;
+    text-align: right;
+    width: 100%;
+  }
+  
+  hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  i {
+    color: #4CAF50;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    visibility: hidden;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    z-index: 1000;
+    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 0;
+  }
+  
+  .popup.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
